@@ -39,9 +39,14 @@ const OhmsLawCalculator = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-        <h1 className="text-2xl font-bold text-center mb-4">Ohm's Law Calculator</h1>
+        &apos;
+        <h1 className="text-2xl font-bold text-center mb-4">
+          Ohm&apos;s Law Calculator
+        </h1>
         <p className="text-center mb-4">
-          Ohm's Law states that the current flowing through a conductor between two points is directly proportional to the voltage across the two points. The formula is:
+          Ohm&apos;s Law states that the current flowing through a conductor
+          between two points is directly proportional to the voltage across the
+          two points. The formula is:
         </p>
         <p className="text-center italic font-semibold mb-6">V = I * R</p>
         <div className="mb-4">
@@ -81,7 +86,9 @@ const OhmsLawCalculator = () => {
         {formula && (
           <p className="text-center mt-2 text-gray-700">Formula: {formula}</p>
         )}
-        <p className="text-center mt-2 text-gray-500">Enter any two values to calculate the third.</p>
+        <p className="text-center mt-2 text-gray-500">
+          Enter any two values to calculate the third.
+        </p>
       </div>
     </div>
   );

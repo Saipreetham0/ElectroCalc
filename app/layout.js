@@ -21,12 +21,13 @@
 //   );
 // }
 
-import "../app/styles/globals.css";
+// import "../app/styles/globals.css";
 // import Header from "./components/Header";
 // import Head from "next/head";
+import "@/styles/globals.css";
 import Script from "next/script";
 import Providers from "./providers";
-import Navbar from "../components/NavBar/navBar";
+import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 // export const metadata = {
@@ -36,9 +37,7 @@ import Footer from "../components/Footer";
 
 export default function RootLayout({ children }) {
   return (
-    // <ClerkProvider>
     <html lang="en">
-      <head></head>
       {/* <Header /> */}
       <body suppressHydrationWarning={true}>
         <Providers>
@@ -50,3 +49,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
