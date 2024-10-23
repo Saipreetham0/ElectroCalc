@@ -29,6 +29,8 @@ import Script from "next/script";
 import Providers from "./providers";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { notFound } from 'next/navigation'
+
 
 // export const metadata = {
 //   title: "Electrical Calculations",
