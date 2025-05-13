@@ -8,7 +8,7 @@ interface ProvidersProps {
   children: ReactNode;
 }
 
-export default function Providers({ children }: ProvidersProps): JSX.Element {
+export default function Providers({ children }: ProvidersProps) {
   return <ThemeProvider attribute="class">{children}</ThemeProvider>;
 }
 
