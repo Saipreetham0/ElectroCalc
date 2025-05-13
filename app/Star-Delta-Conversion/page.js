@@ -1,7 +1,7 @@
 // import ResistorColorCodeCalculator from "../components/ResistorColorCodeCalculator";
 // "use client";
 
-import ResistorColorCode from "../../components/ResistorColorCode";
+// import ResistorColorCode from "../../components/ResistorColorCode";
 import StarConnection from "../../components/StarConnection";
 import DeltaConnection from "../../components/DeltaConnection";
 import ConversionForm from "../../components/ConversionForm";
