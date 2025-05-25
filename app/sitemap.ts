@@ -1,10 +1,10 @@
 // app/sitemap.ts
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 /**
  * Configuration for the sitemap generator
  */
-const SITE_URL = 'https://electrocalc.com';
+const SITE_URL = "https://electro-calc.theskypedia.com";
 
 /**
  * Define all the static pages in your application
@@ -16,7 +16,14 @@ interface StaticPage {
   /** Last modification date (optional) */
   lastModified?: Date;
   /** Change frequency hint (optional) */
-  changeFrequency?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  changeFrequency?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
   /** Priority hint between 0.0 and 1.0 (optional) */
   priority?: number;
 }
@@ -27,75 +34,75 @@ interface StaticPage {
  */
 const staticPages: StaticPage[] = [
   {
-    path: '/',
+    path: "/",
     lastModified: new Date(),
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 1.0,
   },
   {
-    path: '/inverter-calculator',
+    path: "/inverter-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/resistor-color-code-calculator',
+    path: "/resistor-color-code-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/Star-Delta-Conversion',
+    path: "/Star-Delta-Conversion",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/ohms-law-calculator',
+    path: "/ohms-law-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/smd-resistor-code-decoder',
+    path: "/smd-resistor-code-decoder",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/capacitor-code-calculator',
+    path: "/capacitor-code-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/awg-wire-gauge-calculator',
+    path: "/awg-wire-gauge-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/swg-wire-gauge-calculator',
+    path: "/swg-wire-gauge-calculator",
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: "monthly",
     priority: 0.8,
   },
   {
-    path: '/arduino-blogs',
+    path: "/arduino-blogs",
     lastModified: new Date(),
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 0.7,
   },
   {
-    path: '/esp32-blogs',
+    path: "/esp32-blogs",
     lastModified: new Date(),
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 0.7,
   },
   {
-    path: '/raspberry-pi-blogs',
+    path: "/raspberry-pi-blogs",
     lastModified: new Date(),
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 0.7,
   },
 ];
@@ -106,12 +113,14 @@ const staticPages: StaticPage[] = [
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Convert static pages to sitemap format
-  const staticSitemapEntries = staticPages.map(({ path, lastModified, changeFrequency, priority }) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified,
-    changeFrequency,
-    priority,
-  }));
+  const staticSitemapEntries = staticPages.map(
+    ({ path, lastModified, changeFrequency, priority }) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified,
+      changeFrequency,
+      priority,
+    })
+  );
 
   // You can dynamically generate additional URLs here by fetching from your CMS, database, etc.
   // For example, if you have blog posts stored in a database:

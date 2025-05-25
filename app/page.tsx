@@ -175,7 +175,7 @@
 
 "use client";
 
-import React from 'react';
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -184,7 +184,15 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calculator, Zap, Battery, Cpu, Radio, Cable, Microchip } from "lucide-react";
+import {
+  Calculator,
+  Zap,
+  Battery,
+  Cpu,
+  Radio,
+  Cable,
+  Microchip,
+} from "lucide-react";
 import Link from "next/link";
 
 interface Calculator {
@@ -284,13 +292,16 @@ const calculators: Calculator[] = [
 ];
 
 // Group calculators by category
-const categorizedCalculators = calculators.reduce<Record<string, Calculator[]>>((acc, calc) => {
-  if (!acc[calc.category]) {
-    acc[calc.category] = [];
-  }
-  acc[calc.category].push(calc);
-  return acc;
-}, {});
+const categorizedCalculators = calculators.reduce<Record<string, Calculator[]>>(
+  (acc, calc) => {
+    if (!acc[calc.category]) {
+      acc[calc.category] = [];
+    }
+    acc[calc.category].push(calc);
+    return acc;
+  },
+  {}
+);
 
 const categories = Object.keys(categorizedCalculators);
 
@@ -307,24 +318,41 @@ export default function HomePage() {
   };
 
   const filteredCalculators = calculators.filter((calc) => {
-    const matchesSearch = calc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         calc.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || calc.category === selectedCategory;
+    const matchesSearch =
+      calc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      calc.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || calc.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
-      {/* Hero Section */}
-      {/* <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 py-20">
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 py-20">
         <div className="absolute inset-0 opacity-10">
           <svg className="h-full w-full" viewBox="0 0 800 800">
             <defs>
-              <pattern id="circuit-pattern" patternUnits="userSpaceOnUse" width="100" height="100">
+              <pattern
+                id="circuit-pattern"
+                patternUnits="userSpaceOnUse"
+                width="100"
+                height="100"
+              >
                 <path d="M0 0h100v100H0z" fill="none" />
-                <path d="M50 0v30M50 70v30M0 50h30M70 50h30" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M50 0v30M50 70v30M0 50h30M70 50h30"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
                 <circle cx="50" cy="50" r="5" fill="currentColor" />
-                <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </pattern>
             </defs>
             <rect width="800" height="800" fill="url(#circuit-pattern)" />
@@ -340,52 +368,21 @@ export default function HomePage() {
               </h1>
             </div>
             <p className="max-w-2xl text-xl text-blue-100 mb-8">
-              The ultimate electronics calculation toolkit for engineers, makers, and hobbyists
+              The ultimate electronics calculation toolkit for engineers,
+              makers, and hobbyists
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-blue-50"
+              >
                 Get Started
               </Button>
-                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Explore Tools
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-
-         <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 py-20">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="h-full w-full" viewBox="0 0 800 800">
-            <defs>
-              <pattern id="circuit-pattern" patternUnits="userSpaceOnUse" width="100" height="100">
-                <path d="M0 0h100v100H0z" fill="none" />
-                <path d="M50 0v30M50 70v30M0 50h30M70 50h30" stroke="currentColor" strokeWidth="2" />
-                <circle cx="50" cy="50" r="5" fill="currentColor" />
-                <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-              </pattern>
-            </defs>
-            <rect width="800" height="800" fill="url(#circuit-pattern)" />
-          </svg>
-        </div>
-
-        <div className="container relative mx-auto px-6">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <Zap className="w-10 h-10 text-white" />
-              <h1 className="text-5xl font-extrabold text-white tracking-tight">
-                ElectroCalc
-              </h1>
-            </div>
-            <p className="max-w-2xl text-xl text-blue-100 mb-8">
-              The ultimate electronics calculation toolkit for engineers, makers, and hobbyists
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white bg-white/10 text-white hover:bg-white/10"
+              >
                 Explore Tools
               </Button>
             </div>
@@ -398,8 +395,19 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto mb-16">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              <svg
+                className="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
               </svg>
             </div>
             <input
@@ -414,15 +422,28 @@ export default function HomePage() {
                 className="absolute right-16 bottom-2 top-2 px-3 text-gray-400 hover:text-gray-600"
                 onClick={() => setSearchQuery("")}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
                 </svg>
               </button>
             )}
             <button
               type="submit"
               className="absolute right-2 bottom-2 top-2 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
-              onClick={() => {/* Additional search action if needed */}}
+              onClick={() => {
+                /* Additional search action if needed */
+              }}
             >
               Search
             </button>
@@ -434,7 +455,11 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-2 justify-center mb-10">
             <Button
               variant={selectedCategory === "All" ? "default" : "ghost"}
-              className={`rounded-full border ${selectedCategory === "All" ? "bg-blue-600 text-white" : "border-gray-200 hover:bg-blue-50 hover:text-blue-600 dark:border-gray-700"}`}
+              className={`rounded-full border ${
+                selectedCategory === "All"
+                  ? "bg-blue-600 text-white"
+                  : "border-gray-200 hover:bg-blue-50 hover:text-blue-600 dark:border-gray-700"
+              }`}
               onClick={() => handleCategorySelect("All")}
             >
               All Tools
@@ -443,7 +468,11 @@ export default function HomePage() {
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "ghost"}
-                className={`rounded-full border ${selectedCategory === category ? "bg-blue-600 text-white" : "border-gray-200 hover:bg-blue-50 hover:text-blue-600 dark:border-gray-700"}`}
+                className={`rounded-full border ${
+                  selectedCategory === category
+                    ? "bg-blue-600 text-white"
+                    : "border-gray-200 hover:bg-blue-50 hover:text-blue-600 dark:border-gray-700"
+                }`}
                 onClick={() => handleCategorySelect(category)}
               >
                 {category}
@@ -471,7 +500,9 @@ export default function HomePage() {
                           <Icon className="w-5 h-5" />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg font-semibold">{calc.title}</CardTitle>
+                          <CardTitle className="text-lg font-semibold">
+                            {calc.title}
+                          </CardTitle>
                           <CardDescription className="text-xs font-medium text-blue-600 dark:text-blue-400">
                             {calc.category}
                           </CardDescription>
@@ -491,13 +522,33 @@ export default function HomePage() {
         ) : (
           <div className="text-center py-16">
             <div className="mb-4">
-              <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <svg
+                className="w-16 h-16 mx-auto text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">No matching tools found</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">Try adjusting your search or filter criteria</p>
-            <Button onClick={() => {setSearchQuery(""); setSelectedCategory("All");}}>
+            <h3 className="text-xl font-semibold mb-2">
+              No matching tools found
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Try adjusting your search or filter criteria
+            </p>
+            <Button
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("All");
+              }}
+            >
               Reset Filters
             </Button>
           </div>
@@ -510,28 +561,40 @@ export default function HomePage() {
               <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Instant Calculations</h3>
-            <p className="text-gray-600 dark:text-gray-300">Get precise results instantly for all your electronic design needs</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Get precise results instantly for all your electronic design needs
+            </p>
           </div>
           <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
             <div className="p-3 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30">
               <Cpu className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Industry Standards</h3>
-            <p className="text-gray-600 dark:text-gray-300">All calculations follow the latest industry standards and best practices</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              All calculations follow the latest industry standards and best
+              practices
+            </p>
           </div>
           <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
             <div className="p-3 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30">
               <Microchip className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Expert Resources</h3>
-            <p className="text-gray-600 dark:text-gray-300">Access blogs and guides to enhance your electronics knowledge</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Access blogs and guides to enhance your electronics knowledge
+            </p>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="mt-20 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to streamline your electronics projects?</h2>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8">
+          <h2 className="text-3xl font-bold mb-6">
+            Ready to streamline your electronics projects?
+          </h2>
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+          >
             Explore All Tools
           </Button>
         </div>
@@ -541,4 +604,3 @@ export default function HomePage() {
     </div>
   );
 }
-
