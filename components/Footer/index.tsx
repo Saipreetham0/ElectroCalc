@@ -105,10 +105,15 @@ const Footer = () => {
             <span className="text-xl font-bold">ElectroCalc</span>
           </div>
           <div className="flex gap-6">
-            {["About", "Contact", "Blog", "Terms"].map((label) => (
+            {[
+              { label: "About", href: "https://kspelectronics.in/about" },
+              { label: "Contact", href: "https://kspelectronics.in/contact" },
+              { label: "Blog", href: "https://kspelectronics.in/blog" },
+              { label: "Terms", href: "https://kspelectronics.in/terms" },
+            ].map(({ label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 {label}
@@ -138,7 +143,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} ElectroCalc. All rights reserved.
+          © {new Date().getFullYear()} KSP Electronics. All rights reserved. |
+          <a href="https://kspelectronics.in" className="ml-1 hover:text-blue-600 dark:hover:text-blue-400">kspelectronics.in</a>
         </div>
       </div>
     </footer>

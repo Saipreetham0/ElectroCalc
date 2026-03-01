@@ -184,18 +184,15 @@ interface NavLink {
 const navigation: NavLink[] = [
   {
     name: "About Us",
-    href: "https://circuitofthings.com/about-us",
-    // isExternal: true,
+    href: "https://kspelectronics.in/about",
   },
   {
     name: "Blog",
-    href: "https://circuitofthings.com/?utm_source=electrocalc&utm_medium=referral&utm_campaign=general_traffic",
-    // isExternal: true,
+    href: "https://kspelectronics.in/blog",
   },
   {
     name: "Contact",
-    href: "https://circuitofthings.com/get-in-touch/",
-    // isExternal: true,
+    href: "https://kspelectronics.in/contact",
   },
 ];
 
@@ -224,16 +221,14 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
           ? "backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-md"
           : "bg-transparent dark:bg-transparent"
-      }`}
+        }`}
     >
       <div
-        className={`absolute inset-0 transition-opacity duration-300 ${
-          scrolled ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0"
+          }`}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-gray-900/80 dark:to-gray-800/80 backdrop-blur-md"></div>
       </div>

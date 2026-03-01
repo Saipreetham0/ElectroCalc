@@ -4,7 +4,7 @@ import { MetadataRoute } from "next";
 /**
  * Configuration for the sitemap generator
  */
-const SITE_URL = "https://electro-calc.theskypedia.com";
+const SITE_URL = "https://tools.kspelectronics.in";
 
 /**
  * Define all the static pages in your application
@@ -17,13 +17,13 @@ interface StaticPage {
   lastModified?: Date;
   /** Change frequency hint (optional) */
   changeFrequency?:
-    | "always"
-    | "hourly"
-    | "daily"
-    | "weekly"
-    | "monthly"
-    | "yearly"
-    | "never";
+  | "always"
+  | "hourly"
+  | "daily"
+  | "weekly"
+  | "monthly"
+  | "yearly"
+  | "never";
   /** Priority hint between 0.0 and 1.0 (optional) */
   priority?: number;
 }

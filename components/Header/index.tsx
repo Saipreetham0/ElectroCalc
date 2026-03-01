@@ -13,10 +13,10 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Electro-Calc - TheSkypedia",
+  title: "ElectroCalc - KSP Electronics | Free Electronics Calculators",
   description:
-    "Free online electronics and electrical calculators for engineers and students. From Ohm's Law to circuit analysis, Electro-Calc has it all.",
-  applicationName: "Electro-Calc",
+    "Free online electronics and electrical calculators for engineers and students. From Ohm's Law to circuit analysis, ElectroCalc by KSP Electronics has it all.",
+  applicationName: "ElectroCalc",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: [
@@ -25,29 +25,33 @@ export const metadata: Metadata = {
     "Ohm's law calculator",
     "resistor calculator",
     "circuit analysis",
-    "Electro-Calc",
-    "TheSkypedia",
+    "ElectroCalc",
+    "KSP Electronics",
+    "kspelectronics",
+    "wire gauge calculator",
+    "capacitor code calculator",
+    "SMD resistor decoder",
   ],
-  authors: [{ name: "The Skypedia" }, { name: "Sai Preetham" }],
-  creator: "The Skypedia",
-  publisher: "The Skypedia",
+  authors: [{ name: "KSP Electronics" }, { name: "Sai Preetham" }],
+  creator: "KSP Electronics",
+  publisher: "KSP Electronics",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Electro-Calc - TheSkypedia",
+    title: "ElectroCalc - KSP Electronics | Free Electronics Calculators",
     description:
       "Free online electronics and electrical calculators for engineers and students.",
-    url: "https://electro-calc.theskypedia.com",
-    siteName: "Electro-Calc",
+    url: "https://tools.kspelectronics.in",
+    siteName: "ElectroCalc",
     images: [
       {
-        url: "https://electro-calc.theskypedia.com/preview.jpg",
+        url: "https://tools.kspelectronics.in/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Electro-Calc Homepage",
+        alt: "ElectroCalc - KSP Electronics Homepage",
       },
     ],
     locale: "en_US",
@@ -55,12 +59,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electro-Calc - TheSkypedia",
+    title: "ElectroCalc - KSP Electronics | Free Electronics Calculators",
     description:
       "Free online electronics and electrical calculators for engineers and students.",
-    images: ["https://electro-calc.theskypedia.com/preview.jpg"],
-    creator: "@theskypedia",
-    site: "@theskypedia",
+    images: ["https://tools.kspelectronics.in/preview.jpg"],
+    creator: "@kspelectronics",
+    site: "@kspelectronics",
   },
   robots: {
     index: true,
@@ -96,20 +100,20 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   verification: {
-    google: "your-google-verification-code", // Replace if applicable
+    google: "your-google-verification-code", // Replace with actual code
   },
   alternates: {
-    canonical: "https://electro-calc.theskypedia.com",
+    canonical: "https://tools.kspelectronics.in",
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Electro-Calc",
+    title: "ElectroCalc",
     startupImage: [],
   },
   other: {
-    "msapplication-TileColor": "#ffffff",
-    "theme-color": "#ffffff",
+    "msapplication-TileColor": "#1d4ed8",
+    "theme-color": "#1d4ed8",
   },
 };
 
@@ -149,21 +153,18 @@ const Header: React.FC = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "Electro-Calc",
-            url: "https://electro-calc.theskypedia.com",
+            name: "ElectroCalc",
+            url: "https://tools.kspelectronics.in",
             publisher: {
               "@type": "Organization",
-              name: "TheSkypedia",
+              name: "KSP Electronics",
               logo: {
                 "@type": "ImageObject",
-                url: "https://theskypedia.com/wp-content/uploads/2022/06/cropped-theskypedia.com-logo.png",
+                url: "https://tools.kspelectronics.in/logo.png",
               },
             },
             sameAs: [
-              "https://www.linkedin.com/company/theskypedia/",
-              "https://www.instagram.com/theskypedia",
-              "https://theskypedia.com/",
-              "https://www.youtube.com/@theskypedia",
+              "https://kspelectronics.in/",
             ],
           }),
         }}
