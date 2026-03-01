@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
                   <div className="grid grid-cols-3 gap-6">
                     {toolGroups.map((group) => (
                       <div key={group.label}>
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-blue-500 dark:text-blue-400 mb-2.5">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#1C61E7] dark:text-[#3d7ef0] mb-2.5">
                           {group.label}
                         </p>
                         <div className="space-y-1">
@@ -138,9 +138,9 @@ const Navbar: React.FC = () => {
                               key={item.name}
                               href={item.href}
                               onClick={() => setToolsOpen(false)}
-                              className="group/item block rounded-xl px-3 py-2.5 hover:bg-blue-50 dark:hover:bg-blue-900/25 transition-all duration-150"
+                              className="group/item block rounded-xl px-3 py-2.5 hover:bg-[#1C61E7]/6 dark:hover:bg-[#1C61E7]/15 transition-all duration-150"
                             >
-                              <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors">
+                              <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 group-hover/item:text-[#1C61E7] dark:group-hover/item:text-[#3d7ef0] transition-colors">
                                 {item.name}
                               </p>
                               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
                     <Link
                       href="/"
                       onClick={() => setToolsOpen(false)}
-                      className="flex items-center justify-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                      className="flex items-center justify-center gap-2 text-sm font-medium text-[#1C61E7] dark:text-[#3d7ef0] hover:underline"
                     >
                       View all tools →
                     </Link>
@@ -171,7 +171,7 @@ const Navbar: React.FC = () => {
                 href={item.href}
                 target={item.isExternal ? "_blank" : undefined}
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50/60 dark:text-slate-300 dark:hover:text-blue-400 dark:hover:bg-blue-900/20 transition-all duration-200"
+                className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-[#1C61E7] hover:bg-[#1C61E7]/8 dark:text-slate-300 dark:hover:text-[#3d7ef0] dark:hover:bg-[#1C61E7]/15 transition-all duration-200"
               >
                 {item.name}
               </Link>
@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-semibold text-white overflow-hidden group"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:from-blue-500 group-hover:to-indigo-500 transition-all duration-300" />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#1C61E7] to-[#21C15E] group-hover:from-[#1659d4] group-hover:to-[#1da852] transition-all duration-300" />
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="absolute inset-0 bg-[linear-gradient(90deg,transparent,oklch(1_0_0/20%),transparent)] animate-shimmer" />
               </span>
@@ -304,7 +304,7 @@ const Navbar: React.FC = () => {
               href="https://kspelectronics.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all"
+              className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-gradient-to-r from-[#1C61E7] to-[#21C15E] text-white font-semibold text-sm shadow-lg shadow-[#1C61E7]/25 hover:shadow-[#1C61E7]/40 transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
               Visit KSP Electronics ↗

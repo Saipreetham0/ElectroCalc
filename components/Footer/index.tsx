@@ -84,7 +84,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="p-2 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-400 hover:text-white transition-all duration-200"
+                  className="p-2 rounded-lg bg-slate-800 hover:bg-[#1C61E7] text-slate-400 hover:text-white transition-all duration-200"
                 >
                   {s.icon}
                 </a>

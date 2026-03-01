@@ -165,13 +165,13 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#0a1628] to-[#0d1f3c]" />
 
         {/* Animated mesh gradient */}
         <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/30 blur-[120px] animate-float" />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-600/30 blur-[100px] animate-float" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full bg-violet-600/20 blur-[80px] animate-float" style={{ animationDelay: "4s" }} />
+          <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#1C61E7]/25 blur-[120px] animate-float" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#21C15E]/15 blur-[100px] animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full bg-[#1C61E7]/10 blur-[80px] animate-float" style={{ animationDelay: "4s" }} />
         </div>
 
         {/* Circuit SVG pattern */}
@@ -191,7 +191,7 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative container mx-auto px-6 pt-20 pb-28 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-blue-300 text-xs font-semibold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-[#1C61E7]/30 bg-[#1C61E7]/10 backdrop-blur-sm text-[#7aadf5] text-xs font-semibold tracking-widest uppercase">
             <Sparkles className="h-3.5 w-3.5" />
             Free Electronics Toolkit
           </div>
@@ -213,7 +213,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
             <Link
               href="#tools"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-blue-700 font-bold text-sm hover:bg-blue-50 shadow-2xl shadow-blue-500/25 transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#1C61E7] font-bold text-sm hover:bg-blue-50 shadow-2xl shadow-[#1C61E7]/25 transition-all duration-200 hover:scale-105"
             >
               Browse All Tools
               <ArrowRight className="h-4 w-4" />
@@ -256,7 +256,7 @@ export default function HomePage() {
 
           {/* Section header */}
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#1C61E7]/10 dark:bg-[#1C61E7]/20 text-[#1C61E7] dark:text-[#3d7ef0] text-xs font-bold tracking-widest uppercase">
               <Calculator className="h-3.5 w-3.5" />
               Calculator Suite
             </div>
@@ -300,8 +300,8 @@ export default function HomePage() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${selectedCategory === cat
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
+                  ? "bg-[#1C61E7] text-white shadow-md shadow-[#1C61E7]/25"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
                   }`}
               >
                 {cat}
@@ -356,7 +356,7 @@ export default function HomePage() {
                       </p>
 
                       {/* Arrow */}
-                      <div className="mt-4 flex items-center gap-1 text-blue-600 dark:text-blue-400 text-sm font-semibold opacity-0 group-hover:opacity-100 translate-x-[-4px] group-hover:translate-x-0 transition-all duration-200">
+                      <div className="mt-4 flex items-center gap-1 text-[#1C61E7] dark:text-[#3d7ef0] text-sm font-semibold opacity-0 group-hover:opacity-100 translate-x-[-4px] group-hover:translate-x-0 transition-all duration-200">
                         Open Calculator
                         <ArrowRight className="h-3.5 w-3.5" />
                       </div>
@@ -378,7 +378,7 @@ export default function HomePage() {
               </p>
               <button
                 onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
-                className="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors"
+                className="px-6 py-2.5 rounded-xl bg-[#1C61E7] text-white font-semibold text-sm hover:bg-[#1659d4] transition-colors"
               >
                 Reset Filters
               </button>
@@ -427,7 +427,7 @@ export default function HomePage() {
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <div className="relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-700 animate-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1C61E7] via-[#1659d4] to-[#21C15E] animate-gradient" />
             <div className="absolute inset-0 opacity-20">
               <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -454,7 +454,7 @@ export default function HomePage() {
                 href="https://kspelectronics.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl bg-white text-blue-700 font-bold text-sm hover:bg-blue-50 shadow-2xl shadow-blue-900/30 transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl bg-white text-[#1C61E7] font-bold text-sm hover:bg-blue-50 shadow-2xl shadow-blue-900/30 transition-all duration-200 hover:scale-105"
               >
                 Visit kspelectronics.in
                 <ArrowRight className="h-4 w-4" />

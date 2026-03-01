@@ -7,7 +7,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -18,6 +18,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        /* KSP Brand Colors */
+        'ksp-blue': '#1C61E7',
+        'ksp-green': '#21C15E',
+        'ksp-black': '#000000',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
