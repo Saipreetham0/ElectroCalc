@@ -121,7 +121,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="border-b border-slate-200 dark:border-slate-800 bg-[#0a0f1a]">
         <div className="container mx-auto max-w-5xl px-6 pt-20 pb-24 text-center">
-          <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 text-xs font-medium">
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-slate-700 bg-slate-800 text-slate-300 text-sm font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-[#21C15E]" />
             Free · Open Source · No Sign-up
           </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
             <span className="text-[#1C61E7]">for Engineers & Makers</span>
           </h1>
 
-          <p className="max-w-xl mx-auto text-base sm:text-lg text-slate-400 mb-8 leading-relaxed">
+          <p className="max-w-xl mx-auto text-lg sm:text-xl text-slate-400 mb-8 leading-relaxed">
             8 professional-grade tools covering Ohm's Law, resistor codes, wire sizing, power systems, and circuit analysis. Instant, accurate, and always free.
           </p>
 
@@ -156,7 +156,7 @@ export default function HomePage() {
           {/* Key facts row */}
           <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {features.map((f) => (
-              <span key={f} className="flex items-center gap-2 text-sm text-slate-400">
+              <span key={f} className="flex items-center gap-2 text-base text-slate-400">
                 <CheckCircle2 className="h-4 w-4 text-[#21C15E] flex-shrink-0" />
                 {f}
               </span>
@@ -172,7 +172,7 @@ export default function HomePage() {
           {/* Section header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-semibold tracking-wider uppercase text-[#1C61E7] mb-1">Calculator Suite</p>
+              <p className="text-sm font-semibold tracking-wider uppercase text-[#1C61E7] mb-1">Calculator Suite</p>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">All Tools</h2>
             </div>
 
@@ -204,8 +204,8 @@ export default function HomePage() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${selectedCategory === cat
-                    ? "bg-[#1C61E7] border-[#1C61E7] text-white"
-                    : "bg-transparent border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200"
+                  ? "bg-[#1C61E7] border-[#1C61E7] text-white"
+                  : "bg-transparent border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200"
                   }`}
               >
                 {cat}
@@ -226,9 +226,9 @@ export default function HomePage() {
                   >
                     {/* Badge */}
                     {calc.badge && (
-                      <span className={`absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] font-bold ${calc.badge === "New"
-                          ? "bg-[#21C15E]/10 text-[#21C15E] dark:bg-[#21C15E]/20"
-                          : "bg-[#1C61E7]/10 text-[#1C61E7] dark:bg-[#1C61E7]/20"
+                      <span className={`absolute top-4 right-4 px-2 py-0.5 rounded text-xs font-bold ${calc.badge === "New"
+                        ? "bg-[#21C15E]/10 text-[#21C15E] dark:bg-[#21C15E]/20"
+                        : "bg-[#1C61E7]/10 text-[#1C61E7] dark:bg-[#1C61E7]/20"
                         }`}>
                         {calc.badge}
                       </span>
@@ -240,23 +240,23 @@ export default function HomePage() {
                     </div>
 
                     {/* Category */}
-                    <p className="text-[10px] font-semibold tracking-wider uppercase text-slate-400 mb-1">
+                    <p className="text-xs font-semibold tracking-wider uppercase text-slate-400 mb-1">
                       {calc.category}
                     </p>
 
                     {/* Title */}
-                    <h3 className="font-semibold text-slate-900 dark:text-white text-sm mb-2 group-hover:text-[#1C61E7] dark:group-hover:text-[#3d7ef0] transition-colors">
+                    <h3 className="font-semibold text-slate-900 dark:text-white text-base mb-2 group-hover:text-[#1C61E7] dark:group-hover:text-[#3d7ef0] transition-colors">
                       {calc.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
                       {calc.description}
                     </p>
 
                     {/* Footer arrow */}
-                    <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#1C61E7] dark:text-[#3d7ef0] opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-150">
-                      Open Calculator <ArrowRight className="h-3 w-3" />
+                    <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[#1C61E7] dark:text-[#3d7ef0] opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-150">
+                      Open Calculator <ArrowRight className="h-4 w-4" />
                     </div>
                   </Link>
                 );
@@ -283,18 +283,18 @@ export default function HomePage() {
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-xs font-semibold tracking-wider uppercase text-[#1C61E7] mb-2">Why ElectroCalc</p>
+              <p className="text-sm font-semibold tracking-wider uppercase text-[#1C61E7] mb-2">Why ElectroCalc</p>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Built for professionals,<br />free for everyone.
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
                 ElectroCalc is a free suite of electronics tools built and maintained by KSP Electronics. Every calculator follows industry standards so you can trust the results in real projects.
               </p>
               <Link
                 href="https://kspelectronics.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#1C61E7] hover:underline"
+                className="inline-flex items-center gap-2 text-base font-semibold text-[#1C61E7] hover:underline"
               >
                 Learn more about KSP Electronics <ArrowRight className="h-3.5 w-3.5" />
               </Link>
@@ -313,8 +313,8 @@ export default function HomePage() {
                 >
                   <CheckCircle2 className="h-4 w-4 text-[#21C15E] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.title}</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.desc}</p>
+                    <p className="text-base font-semibold text-slate-900 dark:text-white">{item.title}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -329,7 +329,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
             More resources at KSP Electronics
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-sm mb-7 max-w-md mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-base mb-7 max-w-md mx-auto">
             Project tutorials, component guides, IoT experiments, and hands-on electronics content — all on our main blog.
           </p>
           <Link

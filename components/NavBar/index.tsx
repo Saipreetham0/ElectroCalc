@@ -77,8 +77,8 @@ const Navbar: React.FC = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled
-            ? "bg-white dark:bg-[#0a0f1a] border-b border-slate-200 dark:border-slate-800"
-            : "bg-white dark:bg-[#0a0f1a]"
+          ? "bg-white dark:bg-[#0a0f1a] border-b border-slate-200 dark:border-slate-800"
+          : "bg-white dark:bg-[#0a0f1a]"
           }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 h-16 lg:px-8">
@@ -112,8 +112,8 @@ const Navbar: React.FC = () => {
               <button
                 onClick={() => setToolsOpen((v) => !v)}
                 className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${toolsOpen
-                    ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
+                  ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
                   }`}
               >
                 Tools
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
                   <div className="grid grid-cols-3 gap-5">
                     {toolGroups.map((group) => (
                       <div key={group.label}>
-                        <p className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3">
+                        <p className="text-xs font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3">
                           {group.label}
                         </p>
                         <div className="space-y-0.5">
@@ -136,10 +136,10 @@ const Navbar: React.FC = () => {
                               onClick={() => setToolsOpen(false)}
                               className="block rounded-lg px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group"
                             >
-                              <p className="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-[#1C61E7] dark:group-hover:text-[#3d7ef0] transition-colors">
+                              <p className="text-base font-medium text-slate-800 dark:text-slate-200 group-hover:text-[#1C61E7] dark:group-hover:text-[#3d7ef0] transition-colors">
                                 {item.name}
                               </p>
-                              <p className="text-xs text-slate-500 mt-0.5">{item.description}</p>
+                              <p className="text-sm text-slate-500 mt-1">{item.description}</p>
                             </Link>
                           ))}
                         </div>
@@ -229,7 +229,7 @@ const Navbar: React.FC = () => {
           <div className="overflow-y-auto h-[calc(100%-4rem)] p-4 space-y-5">
             {toolGroups.map((group) => (
               <div key={group.label}>
-                <p className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 px-2 mb-2">
+                <p className="text-xs font-semibold tracking-wider uppercase text-slate-400 px-2 mb-2">
                   {group.label}
                 </p>
                 {group.items.map((item) => (
@@ -240,8 +240,8 @@ const Navbar: React.FC = () => {
                     className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                   >
                     <div>
-                      <p>{item.name}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{item.description}</p>
+                      <p className="text-base font-medium">{item.name}</p>
+                      <p className="text-sm text-slate-400 mt-0.5">{item.description}</p>
                     </div>
                     <span className="text-slate-400">›</span>
                   </Link>
