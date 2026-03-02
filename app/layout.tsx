@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import Providers from "./providers";
 import Header from "../components/Header";
-import AdScript from "../components/Adsense/AdScript";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { ReactNode } from "react";
@@ -10,26 +9,34 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://tools.kspelectronics.in"),
   title: {
-    default: "ElectroCalc - Free Electronics Calculators | KSP Electronics",
+    default: "ElectroCalc — Free Online Electronics Calculators | KSP Electronics",
     template: "%s | ElectroCalc",
   },
   description:
-    "Free online electronics and electrical calculators for engineers and students. From Ohm's Law to circuit analysis, ElectroCalc by KSP Electronics has it all.",
+    "11 free electronics calculators — Ohm's Law, resistor color codes, voltage divider, LED resistor, inverter battery sizing, wire gauge, capacitor codes, star-delta conversion, pull-up/pull-down resistor, and more. By KSP Electronics.",
   applicationName: "ElectroCalc",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: [
     "electronics calculator",
-    "electrical tools",
+    "electrical engineering tools",
     "Ohm's law calculator",
-    "resistor calculator",
-    "circuit analysis",
+    "resistor color code calculator",
+    "voltage divider calculator",
+    "LED resistor calculator",
+    "pull-up resistor calculator",
+    "capacitor code calculator",
+    "SMD resistor decoder",
+    "wire gauge calculator",
+    "AWG calculator",
+    "SWG calculator",
+    "inverter battery calculator",
+    "star delta conversion",
+    "circuit analysis tools",
     "ElectroCalc",
     "KSP Electronics",
     "kspelectronics",
-    "wire gauge calculator",
-    "capacitor code calculator",
-    "SMD resistor decoder",
+    "free electronics tools online",
   ],
   authors: [{ name: "KSP Electronics" }, { name: "Sai Preetham" }],
   creator: "KSP Electronics",
@@ -40,9 +47,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "ElectroCalc - Free Electronics Calculators",
+    title: "ElectroCalc — Free Online Electronics Calculators",
     description:
-      "Free online electronics and electrical calculators for engineers and students.",
+      "11 professional-grade electronics calculators — Ohm's Law, voltage dividers, resistor codes, LED resistors, inverter sizing, and more. Instant, accurate, and free.",
     url: "https://tools.kspelectronics.in",
     siteName: "ElectroCalc",
     images: [
@@ -50,7 +57,7 @@ export const metadata: Metadata = {
         url: "/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "ElectroCalc - KSP Electronics Homepage",
+        alt: "ElectroCalc — Free Electronics Calculators by KSP Electronics",
       },
     ],
     locale: "en_US",
@@ -58,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ElectroCalc - Free Electronics Calculators",
+    title: "ElectroCalc — Free Online Electronics Calculators",
     description:
-      "Free online electronics and electrical calculators for engineers and students.",
+      "11 free electronics calculators for engineers and students. Ohm's Law, resistor codes, voltage dividers, and more.",
     images: ["/preview.jpg"],
     creator: "@kspelectronics",
     site: "@kspelectronics",
@@ -123,7 +130,6 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <AdScript />
       <head>
         <Header />
       </head>

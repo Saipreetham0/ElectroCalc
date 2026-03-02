@@ -3,21 +3,50 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Youtube, Facebook, Linkedin } from "lucide-react";
+import { Github, Youtube, Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 
-const toolLinks = [
-  { name: "Ohm's Law Calculator", href: "/ohms-law-calculator" },
-  { name: "Resistor Color Code", href: "/resistor-color-code-calculator" },
-  { name: "SMD Resistor Decoder", href: "/smd-resistor-code-decoder" },
-  { name: "Capacitor Code Calculator", href: "/capacitor-code-calculator" },
-  { name: "AWG Wire Gauge", href: "/awg-wire-gauge-calculator" },
-  { name: "SWG Wire Gauge", href: "/swg-wire-gauge-calculator" },
-  { name: "Inverter Calculator", href: "/inverter-calculator" },
-  { name: "Star-Delta Conversion", href: "/Star-Delta-Conversion" },
+const toolColumns = [
+  {
+    label: "Fundamentals",
+    links: [
+      { name: "Ohm's Law Calculator", href: "/ohms-law-calculator" },
+      { name: "Voltage Divider", href: "/voltage-divider-calculator" },
+      { name: "Star-Delta Conversion", href: "/Star-Delta-Conversion" },
+      { name: "Pull-up / Pull-down", href: "/pullup-pulldown-calculator" },
+    ],
+  },
+  {
+    label: "Components",
+    links: [
+      { name: "Resistor Color Code", href: "/resistor-color-code-calculator" },
+      { name: "SMD Resistor Decoder", href: "/smd-resistor-code-decoder" },
+      { name: "Capacitor Code", href: "/capacitor-code-calculator" },
+      { name: "LED Series Resistor", href: "/led-resistor-calculator" },
+    ],
+  },
+  {
+    label: "Wire & Cable",
+    links: [
+      { name: "AWG Wire Gauge", href: "/awg-wire-gauge-calculator" },
+      { name: "SWG Wire Gauge", href: "/swg-wire-gauge-calculator" },
+    ],
+  },
+  {
+    label: "Power & Battery",
+    links: [
+      { name: "Inverter Calculator", href: "/inverter-calculator" },
+      { name: "Battery Backup Time", href: "/battery-backup-time-calculator" },
+      { name: "Battery Charging Time", href: "/battery-charging-time-calculator" },
+      { name: "Inverter Matching", href: "/inverter-battery-matching-calculator" },
+      { name: "AC Load Calculator", href: "/ac-load-calculator" },
+      { name: "DC Load Calculator", href: "/dc-load-calculator" },
+      { name: "Solar Calculator", href: "/solar-load-calculator" },
+    ],
+  },
 ];
 
 const companyLinks = [
-  { name: "About KSP Electronics", href: "https://kspelectronics.in/about" },
+  { name: "About", href: "https://kspelectronics.in/about" },
   { name: "Blog", href: "https://kspelectronics.in/blog" },
   { name: "Contact", href: "https://kspelectronics.in/contact" },
   { name: "Terms of Use", href: "https://kspelectronics.in/terms" },
@@ -58,31 +87,57 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0a0f1a]">
-      <div className="container mx-auto px-6 pt-12 pb-8 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {/* Brand */}
+    <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#060a14]">
+      {/* Newsletter / CTA band */}
+      <div className="border-b border-slate-200 dark:border-slate-800">
+        <div className="container mx-auto px-6 py-8 max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            {/* Light mode */}
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              Need electronic components?
+            </h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+              Shop resistors, capacitors, sensors, dev boards, and project kits at our store.
+            </p>
+          </div>
+          <a
+            href="https://kspelectronics.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#1C61E7] hover:bg-[#1659d4] text-white text-sm font-semibold transition-colors whitespace-nowrap"
+          >
+            Visit kspelectronics.in
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+
+      {/* Main footer content */}
+      <div className="container mx-auto px-6 pt-12 pb-8 max-w-7xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+
+          {/* Brand column */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            {/* Light mode logo */}
             <Image
               src="/KSP Electronics-black.png"
               alt="KSP Electronics"
               width={160}
               height={40}
-              className="h-8 w-auto dark:hidden mb-4"
+              className="h-8 w-auto dark:hidden mb-3"
             />
-            {/* Dark mode */}
+            {/* Dark mode logo */}
             <Image
               src="/KSP Electronics-white.png"
               alt="KSP Electronics"
               width={160}
               height={40}
-              className="h-8 w-auto hidden dark:block mb-4"
+              className="h-8 w-auto hidden dark:block mb-3"
             />
-            <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-              Free electronics calculators for engineers, students, and makers.
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs mb-5">
+              Free, open-source electronics calculators for engineers, students, and makers. Built and maintained by KSP Electronics.
             </p>
+
+            {/* Social icons */}
             <div className="flex gap-2">
               {socialLinks.map((s) => (
                 <a
@@ -91,7 +146,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-[#1C61E7] hover:text-[#1C61E7] dark:hover:border-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors"
+                  className="group p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-[#1C61E7] hover:border-[#1C61E7]/40 hover:bg-[#1C61E7]/5 dark:hover:border-[#1C61E7]/40 dark:hover:bg-[#1C61E7]/10 transition-all duration-200"
                 >
                   {s.icon}
                 </a>
@@ -99,49 +154,56 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Tools */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-400 mb-4">Calculators</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-              {toolLinks.map(({ name, href }) => (
-                <Link
-                  key={name}
-                  href={href}
-                  className="block py-1.5 text-sm text-slate-600 dark:text-slate-400 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors"
-                >
-                  {name}
-                </Link>
-              ))}
+          {/* Tool columns */}
+          {toolColumns.map((col) => (
+            <div key={col.label}>
+              <h4 className="text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3">
+                {col.label}
+              </h4>
+              <ul className="space-y-1.5">
+                {col.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-slate-600 dark:text-slate-400 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-400 mb-4">Company</h3>
-            <div className="space-y-0.5">
+        {/* Divider */}
+        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Copyright */}
+            <p className="text-sm text-slate-400 dark:text-slate-500">
+              © {new Date().getFullYear()} KSP Electronics. All rights reserved.
+            </p>
+
+            {/* Company links */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
               {companyLinks.map(({ name, href }) => (
                 <a
                   key={name}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-1.5 text-sm text-slate-600 dark:text-slate-400 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors"
+                  className="text-sm text-slate-400 dark:text-slate-500 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors"
                 >
                   {name}
                 </a>
               ))}
             </div>
-          </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} KSP Electronics. All rights reserved.
-          </p>
-          <p className="text-sm text-slate-400">
-            tools.kspelectronics.in
-          </p>
+            {/* Domain */}
+            <p className="text-sm text-slate-400 dark:text-slate-500 font-mono">
+              tools.kspelectronics.in
+            </p>
+          </div>
         </div>
       </div>
     </footer>

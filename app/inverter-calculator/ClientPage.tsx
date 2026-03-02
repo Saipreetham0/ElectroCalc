@@ -38,14 +38,53 @@ interface Appliance {
 }
 
 const APPLIANCES: Appliance[] = [
-  { id: "led-bulb", name: "LED Bulb", watts: 9, icon: "💡", category: "Lighting" },
-  { id: "fan", name: "Ceiling Fan", watts: 75, icon: "🌀", category: "Cooling" },
-  { id: "tv", name: "LED TV (40\")", watts: 100, icon: "📺", category: "Entertainment" },
-  { id: "laptop", name: "Laptop", watts: 65, icon: "💻", category: "Work" },
-  { id: "desktop", name: "Desktop PC", watts: 250, icon: "🖥️", category: "Work" },
-  { id: "fridge", name: "Refrigerator", watts: 200, icon: "🧊", category: "Kitchen" },
-  { id: "wifi", name: "WiFi Router", watts: 15, icon: "📶", category: "Network" },
-  { id: "mobile", name: "Mobile Charger", watts: 10, icon: "📱", category: "Charging" },
+  // Fans and Coolers
+  { id: "ceiling-fan", name: "Ceiling Fan", watts: 75, icon: "🌀", category: "Fans and Coolers" },
+  { id: "table-fan", name: "Table Fan", watts: 50, icon: "🌬️", category: "Fans and Coolers" },
+  { id: "room-cooler", name: "Room Cooler", watts: 250, icon: "❄️", category: "Fans and Coolers" },
+
+  // Laptops and Computers
+  { id: "laptop", name: "Laptop", watts: 65, icon: "💻", category: "Laptops and Computers" },
+  { id: "desktop-pc", name: "Desktop PC", watts: 250, icon: "🖥️", category: "Laptops and Computers" },
+  { id: "printer", name: "Printer", watts: 150, icon: "🖨️", category: "Laptops and Computers" },
+
+  // Lights
+  { id: "led-bulb", name: "LED Bulb", watts: 9, icon: "💡", category: "Lights" },
+  { id: "tube-light", name: "Tube Light", watts: 40, icon: "🔦", category: "Lights" },
+  { id: "cfl", name: "CFL", watts: 25, icon: "💡", category: "Lights" },
+
+  // Home Appliances
+  { id: "refrigerator", name: "Refrigerator", watts: 200, icon: "🧊", category: "Home Appliances" },
+  { id: "washing-machine", name: "Washing Machine", watts: 500, icon: "🫧", category: "Home Appliances" },
+  { id: "microwave-oven", name: "Microwave Oven", watts: 1200, icon: "♨️", category: "Home Appliances" },
+  { id: "iron", name: "Iron", watts: 1000, icon: "👔", category: "Home Appliances" },
+  { id: "water-purifier", name: "Water Purifier", watts: 60, icon: "💧", category: "Home Appliances" },
+
+  // TV & Other Entertainment
+  { id: "led-tv-32", name: "LED TV (32\")", watts: 80, icon: "📺", category: "TV & Other Entertainment" },
+  { id: "led-tv-40", name: "LED TV (40\")", watts: 100, icon: "📺", category: "TV & Other Entertainment" },
+  { id: "led-tv-55", name: "LED TV (55\")", watts: 150, icon: "📺", category: "TV & Other Entertainment" },
+  { id: "set-top-box", name: "Set Top Box", watts: 25, icon: "📡", category: "TV & Other Entertainment" },
+  { id: "music-system", name: "Music System", watts: 100, icon: "🔊", category: "TV & Other Entertainment" },
+
+  // ACs
+  { id: "ac-1t-3star", name: "AC (1 Ton, 3 Star)", watts: 1200, icon: "🧊", category: "ACs" },
+  { id: "ac-1.5t-3star", name: "AC (1.5 Ton, 3 Star)", watts: 1700, icon: "🧊", category: "ACs" },
+  { id: "ac-2t-3star", name: "AC (2 Ton, 3 Star)", watts: 2300, icon: "🧊", category: "ACs" },
+  { id: "ac-1t-inv", name: "AC (1 Ton, Inverter)", watts: 1100, icon: "❄️", category: "ACs" },
+  { id: "ac-1.5t-inv", name: "AC (1.5 Ton, Inverter)", watts: 1600, icon: "❄️", category: "ACs" },
+  { id: "ac-2t-inv", name: "AC (2 Ton, Inverter)", watts: 2100, icon: "❄️", category: "ACs" },
+
+  // Others
+  { id: "wifi-router", name: "WiFi Router", watts: 15, icon: "📶", category: "Others" },
+  { id: "mobile-charger", name: "Mobile Charger", watts: 10, icon: "📱", category: "Others" },
+  { id: "cctv-system", name: "CCTV System", watts: 50, icon: "📹", category: "Others" },
+  { id: "exhaust-fan", name: "Exhaust Fan", watts: 40, icon: "🌀", category: "Others" },
+
+  // Motors
+  { id: "pump-0.5hp", name: "Water Pump (0.5 HP)", watts: 375, icon: "🔧", category: "Motors" },
+  { id: "pump-1hp", name: "Water Pump (1 HP)", watts: 750, icon: "🔧", category: "Motors" },
+  { id: "mixer-grinder", name: "Mixer Grinder", watts: 750, icon: "🔄", category: "Motors" },
 ];
 
 const InverterCalculator: React.FC = () => {
@@ -203,7 +242,7 @@ const InverterCalculator: React.FC = () => {
                           key={v}
                           onClick={() => setBatteryVoltage(v)}
                           className={`py-2 rounded-lg border text-sm font-bold transition-all ${batteryVoltage === v
-                            ? 'bg-ksp-blue border-ksp-blue text-white'
+                            ? 'bg-ksp-blue border-ksp-blue text-white shadow-lg shadow-ksp-blue/20'
                             : 'bg-white dark:bg-white/5 border-gray-100 dark:border-white/10 text-gray-500 hover:border-ksp-blue/50'
                             }`}
                         >
@@ -233,11 +272,11 @@ const InverterCalculator: React.FC = () => {
                             const val = parseInt(e.target.value);
                             if (!isNaN(val) && val >= 50 && val <= 100) setEfficiency(val);
                           }}
-                          className="w-16 h-8 pr-6 text-center font-bold bg-white dark:bg-[#0a0f1a] dark:border-white/10 border-gray-200"
+                          className="w-20 h-8 pr-7 text-center font-bold text-gray-900 dark:text-white bg-white dark:bg-[#0a0f1a] dark:border-white/10 border-gray-200"
                           min={50}
                           max={100}
                         />
-                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-gray-500 font-bold">%</span>
+                        <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-sm text-gray-700 dark:text-gray-300 font-bold pointer-events-none">%</span>
                       </div>
                     </div>
                   </div>
