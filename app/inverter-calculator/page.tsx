@@ -25,6 +25,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Inverter & Battery Sizing Calculator | Off-Grid Power | KSP Electronics",
+    "description": "Free online inverter calculator. Determine the required inverter size, battery bank capacity, and estimated backup time for your solar or off-grid power setup.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function InverterCalculatorPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

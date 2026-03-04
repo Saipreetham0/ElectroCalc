@@ -25,6 +25,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Voltage Divider Calculator | Resistor Network | KSP Electronics",
+    "description": "Free online voltage divider calculator. Instantly calculate output voltage, resistor values, or input voltage for resistor divider circuits used in electronics design.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function VoltageDividerCalculatorPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

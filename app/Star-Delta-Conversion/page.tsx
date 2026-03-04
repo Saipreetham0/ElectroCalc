@@ -25,6 +25,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Star-Delta Conversion Calculator | Y-Δ Transform | KSP Electronics",
+    "description": "Free online Wye-Delta (Star-Delta) conversion calculator. Accurately transform impedance and resistance networks in 3-phase electrical systems.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function StarDeltaConversionPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

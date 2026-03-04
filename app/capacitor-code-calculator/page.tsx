@@ -25,6 +25,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Capacitor Code Calculator | Ceramic, Film & Tantalum | KSP Electronics",
+    "description": "Free online capacitor code calculator. Decode 3-digit and EIA codes for ceramic, film, and tantalum capacitors to find capacitance in pF, nF, and µF.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function CapacitorCodeCalculatorPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

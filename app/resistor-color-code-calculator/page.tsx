@@ -26,6 +26,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Resistor Color Code Calculator | 4 & 5 Band | KSP Electronics",
+    "description": "Free online resistor color code calculator. Easily decode 4-band and 5-band resistors to find their exact resistance values and tolerances.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function ResistorColorCodeCalculatorPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

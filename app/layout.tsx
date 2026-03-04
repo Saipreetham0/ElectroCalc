@@ -108,9 +108,6 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code", // Replace with actual code
   },
-  alternates: {
-    canonical: "https://tools.kspelectronics.in",
-  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

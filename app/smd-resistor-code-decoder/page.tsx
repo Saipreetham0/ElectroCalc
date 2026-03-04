@@ -26,6 +26,29 @@ export const metadata: Metadata = {
     },
 };
 
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SMD Resistor Code Decoder | EIA-96 & 3/4 Digit | KSP Electronics",
+    "description": "Free online SMD resistor code calculator. Instantly decode 3-digit, 4-digit, and EIA-96 surface-mount resistor markings to find their exact resistance values.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function SMDResistorCodeDecoderPage() {
-    return <ClientPage />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    );
 }

@@ -15,4 +15,27 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://tools.kspelectronics.in/inverter-battery-matching-calculator" },
 };
 
-export default function Page() { return <ClientPage />; }
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Inverter Battery Matching Calculator | KSP Electronics",
+    "description": "Free inverter battery matching calculator. Find the right inverter VA rating and battery Ah capacity for your home or office load and desired backup hours.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
+export default function Page() { return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    ); }

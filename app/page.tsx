@@ -62,7 +62,7 @@ const toolListSchema = {
   "@type": "ItemList",
   name: "Electronics Calculators",
   description: "Free online electronics engineering calculators by KSP Electronics",
-  numberOfItems: 17,
+  numberOfItems: 30,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Ohm's Law Calculator", url: "https://tools.kspelectronics.in/ohms-law-calculator" },
     { "@type": "ListItem", position: 2, name: "Inverter & Battery Calculator", url: "https://tools.kspelectronics.in/inverter-calculator" },
@@ -81,6 +81,19 @@ const toolListSchema = {
     { "@type": "ListItem", position: 15, name: "DC Load Calculator", url: "https://tools.kspelectronics.in/dc-load-calculator" },
     { "@type": "ListItem", position: 16, name: "AC Load Calculator", url: "https://tools.kspelectronics.in/ac-load-calculator" },
     { "@type": "ListItem", position: 17, name: "Solar Load Calculator", url: "https://tools.kspelectronics.in/solar-load-calculator" },
+    { "@type": "ListItem", position: 18, name: "Current Divider Calculator", url: "https://tools.kspelectronics.in/current-divider-calculator" },
+    { "@type": "ListItem", position: 19, name: "Power Calculator", url: "https://tools.kspelectronics.in/power-calculator" },
+    { "@type": "ListItem", position: 20, name: "RC Time Constant Calculator", url: "https://tools.kspelectronics.in/rc-time-constant-calculator" },
+    { "@type": "ListItem", position: 21, name: "LC Resonant Frequency Calculator", url: "https://tools.kspelectronics.in/lc-resonant-frequency-calculator" },
+    { "@type": "ListItem", position: 22, name: "Energy Calculator", url: "https://tools.kspelectronics.in/energy-calculator" },
+    { "@type": "ListItem", position: 23, name: "AC Power Calculator", url: "https://tools.kspelectronics.in/ac-power-calculator" },
+    { "@type": "ListItem", position: 24, name: "Real vs Reactive Power Calculator", url: "https://tools.kspelectronics.in/real-reactive-power-calculator" },
+    { "@type": "ListItem", position: 25, name: "RMS Voltage Calculator", url: "https://tools.kspelectronics.in/rms-voltage-calculator" },
+    { "@type": "ListItem", position: 26, name: "Decibel (dB) Calculator", url: "https://tools.kspelectronics.in/decibel-calculator" },
+    { "@type": "ListItem", position: 27, name: "Frequency to Wavelength Calculator", url: "https://tools.kspelectronics.in/frequency-wavelength-calculator" },
+    { "@type": "ListItem", position: 28, name: "Duty Cycle Calculator", url: "https://tools.kspelectronics.in/duty-cycle-calculator" },
+    { "@type": "ListItem", position: 29, name: "Rise Time Calculator", url: "https://tools.kspelectronics.in/rise-time-calculator" },
+    { "@type": "ListItem", position: 30, name: "Signal Period/Frequency Converter", url: "https://tools.kspelectronics.in/period-frequency-converter" },
   ],
 };
 

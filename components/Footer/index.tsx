@@ -18,12 +18,25 @@ const calculatorLinks = [
   { name: "AWG Wire Gauge", href: "/awg-wire-gauge-calculator" },
   { name: "SWG Wire Gauge", href: "/swg-wire-gauge-calculator" },
   { name: "Inverter Calculator", href: "/inverter-calculator" },
-  { name: "Battery Backup Time", href: "/battery-backup-time-calculator", badge: "New" },
-  { name: "Battery Charging Time", href: "/battery-charging-time-calculator", badge: "New" },
-  { name: "Solar Calculator", href: "/solar-load-calculator", badge: "New" },
-  { name: "AC Load Calculator", href: "/ac-load-calculator", badge: "New" },
-  { name: "DC Load Calculator", href: "/dc-load-calculator", badge: "New" },
-  { name: "Inverter Matching", href: "/inverter-battery-matching-calculator", badge: "New" },
+  { name: "Battery Backup Time", href: "/battery-backup-time-calculator" },
+  { name: "Battery Charging Time", href: "/battery-charging-time-calculator" },
+  { name: "Solar Calculator", href: "/solar-load-calculator" },
+  { name: "AC Load Calculator", href: "/ac-load-calculator" },
+  { name: "DC Load Calculator", href: "/dc-load-calculator" },
+  { name: "Inverter Matching", href: "/inverter-battery-matching-calculator" },
+  { name: "Current Divider", href: "/current-divider-calculator", badge: "New" },
+  { name: "Power Calculator", href: "/power-calculator", badge: "New" },
+  { name: "RC Time Constant", href: "/rc-time-constant-calculator", badge: "New" },
+  { name: "LC Resonant Freq", href: "/lc-resonant-frequency-calculator", badge: "New" },
+  { name: "Energy Calculator", href: "/energy-calculator", badge: "New" },
+  { name: "AC Power Calculator", href: "/ac-power-calculator", badge: "New" },
+  { name: "Real vs Reactive Power", href: "/real-reactive-power-calculator", badge: "New" },
+  { name: "RMS Voltage", href: "/rms-voltage-calculator", badge: "New" },
+  { name: "Decibel (dB)", href: "/decibel-calculator", badge: "New" },
+  { name: "Freq & Wavelength", href: "/frequency-wavelength-calculator", badge: "New" },
+  { name: "Duty Cycle", href: "/duty-cycle-calculator", badge: "New" },
+  { name: "Rise Time & Bandwidth", href: "/rise-time-calculator", badge: "New" },
+  { name: "Period / Frequency", href: "/period-frequency-converter", badge: "New" },
 ];
 
 const companyLinks = [
@@ -107,7 +120,7 @@ const Footer = () => {
             <h4 className="text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3">Calculators</h4>
             <div className="grid grid-cols-2 gap-x-4">
               <ul className="space-y-2">
-                {calculatorLinks.slice(0, 9).map((link) => (
+                {calculatorLinks.slice(0, 15).map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors inline-flex items-center gap-1.5">
                       {link.name}
@@ -117,7 +130,7 @@ const Footer = () => {
                 ))}
               </ul>
               <ul className="space-y-2">
-                {calculatorLinks.slice(9).map((link) => (
+                {calculatorLinks.slice(15).map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-[#1C61E7] dark:hover:text-[#3d7ef0] transition-colors inline-flex items-center gap-1.5">
                       {link.name}

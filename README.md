@@ -5,7 +5,7 @@
 <h3 align="center">Free, Open-Source Electronics Calculators</h3>
 
 <p align="center">
-  <strong>17 professional-grade tools</strong> for engineers, students, and makers — from Ohm's Law to solar panel sizing.<br/>
+  <strong>30 professional-grade tools</strong> for engineers, students, and makers — from Ohm's Law to solar panel sizing.<br/>
   IEEE-verified formulas. Instant results. No sign-up. Always free.
 </p>
 
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tools-17-blue?style=flat-square" alt="17 Tools" />
+  <img src="https://img.shields.io/badge/tools-30-blue?style=flat-square" alt="30 Tools" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
   <img src="https://img.shields.io/badge/next.js-16-black?style=flat-square&logo=next.js" alt="Next.js 16" />
@@ -42,8 +42,11 @@ It helps more engineers and students discover these free tools.
 | Calculator | Description |
 |---|---|
 | **Ohm's Law** | Voltage, current & resistance calculations |
+| **Current Divider** | Parallel resistor current |
+| **Power Calculator** | Power, voltage, current (P=VI) |
 | **Voltage Divider** | Resistor divider circuit design |
 | **Star-Delta Conversion** | Y ↔ Δ network transformations for 3-phase circuits |
+| **RC Time Constant** | RC charging/discharging |
 | **Pull-up / Pull-down** | Optimal resistor values for digital logic |
 
 ### Components
@@ -60,7 +63,7 @@ It helps more engineers and students discover these free tools.
 | **AWG Wire Gauge** | American Wire Gauge lookup with current ratings |
 | **SWG Wire Gauge** | British/Indian Standard Wire Gauge |
 
-### Power & Battery 🔋
+### Power & Solar 🔋
 | Calculator | Description |
 |---|---|
 | **Inverter Calculator** | Inverter VA & battery bank sizing |
@@ -69,7 +72,21 @@ It helps more engineers and students discover these free tools.
 | **Inverter-Battery Matching** | Right inverter + battery combo |
 | **AC Load Calculator** | Home power, monthly kWh & ₹ cost |
 | **DC Load Calculator** | Off-grid DC system sizing (12V/24V/48V) |
+| **Energy Calculator** | Wh and kWh consumption |
 | **Solar Calculator** | Panel, battery, charge controller & inverter sizing |
+
+### AC & Signals 📡
+| Calculator | Description |
+|---|---|
+| **AC Power Calculator** | Active, Apparent, and Reactive Power |
+| **Real vs Reactive Power** | Solve the AC Power Triangle |
+| **RMS Voltage Calculator** | RMS, Peak, Peak-to-Peak, and Average |
+| **LC Resonant Frequency** | Resonant frequency of LC circuit |
+| **Decibel (dB) Gain** | Power & voltage gain in dB |
+| **Frequency & Wavelength** | Convert Hz and meters |
+| **Duty Cycle Calculator** | PWM signal parameters |
+| **Rise Time & Bandwidth** | BW = 0.35 / tr |
+| **Period / Frequency** | Convert Period and Frequency |
 
 ---
 
@@ -132,7 +149,7 @@ ElectroCalc/
 │   ├── resistor-color-code-calculator/
 │   ├── voltage-divider-calculator/
 │   ├── solar-load-calculator/
-│   └── ...                       # 17 calculator folders total
+│   └── ...                       # 30 calculator folders total
 ├── components/
 │   ├── NavBar/                   # Navbar with mega dropdown
 │   ├── Footer/                   # Footer with all links

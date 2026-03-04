@@ -13,6 +13,9 @@ import {
     ArrowRight,
     CheckCircle2,
     Sun,
+    Activity,
+    Triangle,
+    Timer,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -155,6 +158,110 @@ const calculators: CalculatorItem[] = [
         description: "Size your solar panels, battery bank, charge controller, and inverter for your daily load.",
         url: "/solar-load-calculator",
         icon: Sun,
+        badge: "New",
+    },
+    {
+        title: "Current Divider Calculator",
+        category: "Fundamentals",
+        description: "Calculate the current flowing through any number of parallel resistors and total circuit current.",
+        url: "/current-divider-calculator",
+        icon: Zap,
+        badge: "New",
+    },
+    {
+        title: "Power Calculator (P=VI)",
+        category: "Fundamentals",
+        description: "Calculate electrical power, voltage, current, and resistance using the power formulas.",
+        url: "/power-calculator",
+        icon: Zap,
+        badge: "New",
+    },
+    {
+        title: "RC Time Constant",
+        category: "Fundamentals",
+        description: "Calculate the RC time constant (Tau) and charging/discharging voltage for resistor-capacitor circuits.",
+        url: "/rc-time-constant-calculator",
+        icon: Timer,
+        badge: "New",
+    },
+    {
+        title: "LC Resonant Frequency",
+        category: "Fundamentals",
+        description: "Calculate the resonant frequency of an LC circuit given inductance and capacitance.",
+        url: "/lc-resonant-frequency-calculator",
+        icon: Activity,
+        badge: "New",
+    },
+    {
+        title: "Energy Calculator",
+        category: "Power & AC",
+        description: "Calculate electrical energy consumption in Watt-hours (Wh) and Kilowatt-hours (kWh).",
+        url: "/energy-calculator",
+        icon: Zap,
+        badge: "New",
+    },
+    {
+        title: "AC Power Calculator",
+        category: "Power & AC",
+        description: "Calculate Active, Apparent, and Reactive Power for single-phase and three-phase AC systems.",
+        url: "/ac-power-calculator",
+        icon: Zap,
+        badge: "New",
+    },
+    {
+        title: "Real vs Reactive Power",
+        category: "Power & AC",
+        description: "Solve the AC Power Triangle to find Real Power, Reactive Power, Apparent Power, and Power Factor.",
+        url: "/real-reactive-power-calculator",
+        icon: Triangle,
+        badge: "New",
+    },
+    {
+        title: "RMS Voltage Calculator",
+        category: "Power & AC",
+        description: "Convert between RMS, Peak, Peak-to-Peak, and Average voltages for a pure sine wave.",
+        url: "/rms-voltage-calculator",
+        icon: Activity,
+        badge: "New",
+    },
+    {
+        title: "Decibel (dB) Gain Calculator",
+        category: "High Frequency & Signals",
+        description: "Convert linear power, voltage, and current ratios into logarithmic decibels (dB).",
+        url: "/decibel-calculator",
+        icon: Activity,
+        badge: "New",
+    },
+    {
+        title: "Frequency & Wavelength",
+        category: "High Frequency & Signals",
+        description: "Convert between frequency and wavelength for electromagnetic waves using the speed of light.",
+        url: "/frequency-wavelength-calculator",
+        icon: Radio,
+        badge: "New",
+    },
+    {
+        title: "Duty Cycle Calculator",
+        category: "High Frequency & Signals",
+        description: "Calculate PWM Duty Cycle, Pulse Width, Period, and Frequency depending on known parameters.",
+        url: "/duty-cycle-calculator",
+        icon: Activity,
+        badge: "New",
+    },
+    {
+        title: "Rise Time & Bandwidth",
+        category: "High Frequency & Signals",
+        description: "Convert between signal Rise Time (10% to 90%) and analog Bandwidth using the standard 0.35 rule.",
+        url: "/rise-time-calculator",
+        icon: Activity,
+        badge: "New",
+    },
+    {
+        title: "Period / Frequency",
+        category: "High Frequency & Signals",
+        description: "Convert signal period duration into frequency (Hz) or frequency into period (time).",
+        url: "/period-frequency-converter",
+        icon: Timer,
         badge: "New",
     },
 ];
@@ -557,8 +664,8 @@ function FAQAccordion() {
                     <div
                         key={faq.q}
                         className={`border rounded-xl transition-all duration-200 ${isOpen
-                                ? "border-[#1C61E7]/30 bg-[#1C61E7]/[0.03] dark:bg-[#1C61E7]/[0.06] shadow-sm"
-                                : "border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-600"
+                            ? "border-[#1C61E7]/30 bg-[#1C61E7]/[0.03] dark:bg-[#1C61E7]/[0.06] shadow-sm"
+                            : "border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-600"
                             }`}
                     >
                         <button

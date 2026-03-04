@@ -15,4 +15,27 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://tools.kspelectronics.in/solar-load-calculator" },
 };
 
-export default function Page() { return <ClientPage />; }
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Solar Load Calculator | Panel & Battery Sizing | KSP Electronics",
+    "description": "Free solar load calculator. Size your solar panel array, battery bank, and charge controller based on your daily load and available sun hours. Perfect for Indian rooftop solar.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
+export default function Page() { return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    ); }

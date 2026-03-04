@@ -15,4 +15,27 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://tools.kspelectronics.in/ac-load-calculator" },
 };
 
-export default function Page() { return <ClientPage />; }
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AC Load Calculator | Total Power Consumption | KSP Electronics",
+    "description": "Free AC load calculator. Add up your household or office AC appliances with power factor to find total real power (watts), apparent power (VA), and monthly energy consumption (kWh).",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
+export default function Page() { return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    ); }

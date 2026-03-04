@@ -15,4 +15,27 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://tools.kspelectronics.in/dc-load-calculator" },
 };
 
-export default function Page() { return <ClientPage />; }
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DC Load Calculator | Total Watts for DC Systems | KSP Electronics",
+    "description": "Free DC load calculator. Add up your DC appliances to find total load in watts and amps. Ideal for 12V, 24V, and 48V off-grid and solar systems.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
+export default function Page() { return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+            <ClientPage />
+        </>
+    ); }

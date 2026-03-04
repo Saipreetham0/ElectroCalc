@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, ArrowUpRight, Zap, Battery, Cable, Radio, Sun } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight, Zap, Battery, Cable, Radio, Sun, Activity } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import ThemeButton from "../Theme";
 
@@ -25,40 +25,52 @@ const toolGroups: ToolGroup[] = [
     icon: Zap,
     items: [
       { name: "Ohm's Law", href: "/ohms-law-calculator", description: "Voltage, current & resistance" },
-      { name: "Inverter Calculator", href: "/inverter-calculator", description: "Power & battery sizing" },
+      { name: "Current Divider", href: "/current-divider-calculator", description: "Parallel resistor current" },
+      { name: "Power Calculator", href: "/power-calculator", description: "Power, voltage, current" },
       { name: "Voltage Divider", href: "/voltage-divider-calculator", description: "Resistor divider circuits" },
       { name: "Pull-up / Pull-down", href: "/pullup-pulldown-calculator", description: "Digital logic resistors" },
+      { name: "RC Time Constant", href: "/rc-time-constant-calculator", description: "RC charging/discharging" },
+      { name: "Star-Delta Conversion", href: "/Star-Delta-Conversion", description: "3-phase networks" },
     ],
   },
   {
-    label: "Components",
+    label: "Components & Wire",
     icon: Radio,
     items: [
       { name: "Resistor Color Code", href: "/resistor-color-code-calculator", description: "Decode band colors" },
       { name: "SMD Resistor Code", href: "/smd-resistor-code-decoder", description: "Surface-mount markings" },
       { name: "Capacitor Code", href: "/capacitor-code-calculator", description: "Find capacitance values" },
       { name: "LED Series Resistor", href: "/led-resistor-calculator", description: "Current-limiting resistor" },
-    ],
-  },
-  {
-    label: "Wire & Networks",
-    icon: Cable,
-    items: [
       { name: "AWG Wire Gauge", href: "/awg-wire-gauge-calculator", description: "American standard" },
       { name: "SWG Wire Gauge", href: "/swg-wire-gauge-calculator", description: "British/Indian standard" },
-      { name: "Star-Delta Conversion", href: "/Star-Delta-Conversion", description: "3-phase networks" },
     ],
   },
   {
-    label: "Power & Battery",
+    label: "Power & Solar",
     icon: Battery,
     items: [
+      { name: "Inverter Matching", href: "/inverter-battery-matching-calculator", description: "Right inverter & battery" },
       { name: "Battery Backup Time", href: "/battery-backup-time-calculator", description: "How long will it last" },
       { name: "Battery Charging Time", href: "/battery-charging-time-calculator", description: "Estimate charge time" },
-      { name: "Inverter Matching", href: "/inverter-battery-matching-calculator", description: "Right inverter & battery" },
+      { name: "Solar Calculator", href: "/solar-load-calculator", description: "Panel & battery sizing" },
       { name: "AC Load Calculator", href: "/ac-load-calculator", description: "Home power & cost" },
       { name: "DC Load Calculator", href: "/dc-load-calculator", description: "Off-grid DC loads" },
-      { name: "Solar Calculator", href: "/solar-load-calculator", description: "Panel & battery sizing" },
+      { name: "Energy Calculator", href: "/energy-calculator", description: "Wh and kWh consumption" },
+    ],
+  },
+  {
+    label: "AC & Signals",
+    icon: Activity,
+    items: [
+      { name: "AC Power Calculator", href: "/ac-power-calculator", description: "Single/3-phase power" },
+      { name: "Power Triangle", href: "/real-reactive-power-calculator", description: "Real, Reactive, Apparent" },
+      { name: "RMS Voltage", href: "/rms-voltage-calculator", description: "RMS, Peak & Average" },
+      { name: "LC Resonant Freq", href: "/lc-resonant-frequency-calculator", description: "LC tank circuit" },
+      { name: "Decibel (dB)", href: "/decibel-calculator", description: "Power & voltage gain" },
+      { name: "Freq & Wavelength", href: "/frequency-wavelength-calculator", description: "Hz and meters" },
+      { name: "Duty Cycle", href: "/duty-cycle-calculator", description: "PWM signal parameters" },
+      { name: "Rise Time & BW", href: "/rise-time-calculator", description: "tr = 0.35 / BW rule" },
+      { name: "Period / Frequency", href: "/period-frequency-converter", description: "Convert T & f" },
     ],
   },
 ];
@@ -133,7 +145,7 @@ const Navbar: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm font-bold text-slate-900 dark:text-white">Calculator Suite</p>
-                        <p className="text-xs text-slate-500 mt-0.5">17 free electronics tools</p>
+                        <p className="text-xs text-slate-500 mt-0.5">30 free electronics tools</p>
                       </div>
                       <Link
                         href="/"
